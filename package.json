@@ -10,7 +10,9 @@
     "start": "probot run ./index.js",
     "lint:fix": "standard --fix",
     "test": "standard && jest",
-    "test:watch": "jest --watchAll --notify --notifyMode=change --coverage"
+    "test:watch": "jest --watchAll --notify --notifyMode=change --coverage",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "bottleneck": "^2.19.5",
@@ -21,7 +23,8 @@
     "probot-config": "^1.1.0",
     "probot-scheduler": "wei/probot-scheduler#3b656f7",
     "request": "^2.88.2",
-    "request-promise": "^4.2.6"
+    "request-promise": "^4.2.6",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "jest": "^26.4.2",
@@ -49,5 +52,6 @@
         "statements": 95
       }
     }
-  }
+  },
+  "snyk": true
 }
